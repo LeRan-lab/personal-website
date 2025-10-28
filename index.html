@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林艺 | 个人主页</title>
-    <!-- 引入图标库 -->
+    <title>楽然的小窝 | 主页</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -96,21 +95,25 @@
             width: 100%;
         }
         
-        /* 首页内容 */
+        /* 首页内容 - 头像放大并居中 */
         .home-section {
             min-height: 100vh;
-            padding: 20vh 0 10vh;
+            padding: 18vh 0 10vh; /* 减少顶部 padding，避免头像太靠下 */
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* 整体内容居中 */
             text-align: center;
         }
         
+        /* 头像容器：放大尺寸并居中 */
         .profile-container {
             position: relative;
-            width: 180px; /* 与头像同宽 */
-            height: 180px; /* 与头像同高 */
+            width: 220px; /* 头像放大到 220px（原180px） */
+            height: 220px;
             margin-bottom: 3rem;
+            /* 确保容器本身居中（冗余保障） */
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .profile-pic {
@@ -118,22 +121,23 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 7px solid white; /* 边框略宽，配合放大尺寸 */
+            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
             position: relative;
-            z-index: 2; /* 确保头像在边框上方 */
+            z-index: 2;
         }
         
+        /* 旋转边框：随头像同步放大 */
         .profile-frame {
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            top: -12px; /* 边框向外扩展更多，匹配放大后的头像 */
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
             border: 2px dashed var(--primary);
             border-radius: 50%;
             animation: rotate 15s linear infinite;
-            z-index: 1; /* 边框在头像下方 */
+            z-index: 1;
         }
         
         @keyframes rotate {
@@ -142,7 +146,7 @@
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem; /* 标题略大，配合头像比例 */
             margin-bottom: 1rem;
             letter-spacing: -0.5px;
             background: linear-gradient(45deg, var(--primary), #6c5ce7);
@@ -152,7 +156,7 @@
         }
         
         .bio {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--gray);
             max-width: 650px;
             margin: 0 auto 4rem;
@@ -160,22 +164,22 @@
             letter-spacing: 0.3px;
         }
         
-        /* 社交媒体链接（纯图标样式） */
+        /* 社交媒体图标 */
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.8rem; /* 图标间距略大，视觉更平衡 */
             justify-content: center;
             margin-bottom: 5rem;
         }
         
         .social-btn {
-            width: 60px;
-            height: 60px;
+            width: 65px; /* 图标按钮略大 */
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-decoration: none;
             box-shadow: var(--shadow);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -187,27 +191,13 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        .social-btn.weibo { 
-            background: #fff;
-            color: #e6162d; 
-        }
+        .social-btn.weibo { background: #fff; color: #e6162d; }
+        .social-btn.bilibili { background: #fff; color: #fb7299; }
+        .social-btn.wechat { background: #fff; color: #07c160; }
+        .social-btn.xiaohongshu { background: #fff; color: #fe2c55; }
+	.social-btn.douyin { background: #fff; color: #000; }
         
-        .social-btn.bilibili { 
-            background: #fff;
-            color: #fb7299; 
-        }
-        
-        .social-btn.wechat { 
-            background: #fff;
-            color: #07c160; 
-        }
-        
-        .social-btn.xiaohongshu { 
-            background: #fff;
-            color: #fe2c55; 
-        }
-        
-        /* 装饰元素 */
+        /* 装饰元素：位置调整，配合头像居中 */
         .decor {
             position: absolute;
             border-radius: 50%;
@@ -216,17 +206,19 @@
         }
         
         .decor1 {
-            top: 20%;
-            left: 5%;
-            width: 150px;
-            height: 150px;
+            top: 25%;
+            left: 50%;
+            transform: translateX(-150%); /* 左侧装饰相对居中位置左移 */
+            width: 180px;
+            height: 180px;
         }
         
         .decor2 {
             bottom: 15%;
-            right: 8%;
-            width: 200px;
-            height: 200px;
+            left: 50%;
+            transform: translateX(100%); /* 右侧装饰相对居中位置右移 */
+            width: 220px;
+            height: 220px;
         }
         
         /* 页脚 */
@@ -239,25 +231,31 @@
             margin-top: auto;
         }
         
-        /* 响应式设计 */
+        /* 响应式调整：在手机上适配放大后的头像 */
         @media (max-width: 768px) {
+            .profile-container {
+                width: 190px;
+                height: 190px;
+            }
+            
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .bio {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 padding: 0 1rem;
             }
             
             .social-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.3rem;
             }
             
-            .nav-links {
-                gap: 1.5rem;
+            .decor1, .decor2 {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -271,7 +269,7 @@
             <nav>
                 <a href="index.html" class="logo">楽然的小窝</a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">简介</a></li>
+                    <li><a href="index.html" class="active">主页</a></li>
                     <li><a href="portfolio.html">作品集</a></li>
                 </ul>
             </nav>
@@ -285,7 +283,7 @@
                 <img src="my-avatar.jpg" alt="我的头像" class="profile-pic">
             </div>
             
-            <h1>你好，我是楽然</h1>
+            <h1>楽然</h1>
             
             <p class="bio">
                 自由插画师 & 二次元furry & 公共营养师，擅长用线条和色彩捕捉生活中的诗意。作品曾入选国际插画展，
@@ -305,6 +303,9 @@
                 <a href="https://www.xiaohongshu.com/" target="_blank" class="social-btn xiaohongshu" title="小红书">
                     <i class="fas fa-book-open"></i>
                 </a>
+  		<a href="https://www.douyin.com/" target="_blank" class="social-btn douyin" title="抖音">
+        	    <i class="fab fa-tiktok"></i>
+ 		</a>
             </div>
         </div>
     </section>
