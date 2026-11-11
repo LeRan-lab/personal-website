@@ -1,0 +1,19 @@
+# 操作系统与编辑器缓存
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# 依赖与编辑器目录（本项目为纯静态站，通常不会出现）
+node_modules/
+.vscode/
+.idea/
+
+# 构建/临时产物
+*.tmp
+*.bak
+temp/
+
+# 图片源文件留档目录：存放 5760×5760 的头像原图（约 10 MB），
+# 不应进入版本库，需要时请单独备份到网盘/移动硬盘。
+assets/originals/

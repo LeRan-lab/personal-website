@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>页面走丢了 | 楽然的小窝</title>
+    <meta name="description" content="抱歉，这个页面不存在。返回楽然的小屋首页或浏览作品集。">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" href="/personal-website/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/personal-website/favicon.svg">
+    <link rel="apple-touch-icon" href="/personal-website/apple-touch-icon.png">
+    <!-- 注意：404 页会响应站内任意不存在路径，脚本与样式必须用站点根绝对路径，
+         否则形如 /personal-website/foo/bar 的请求会解析到错误目录。
+         若后续绑定自定义域名，请把这些前缀一并换成新域名下的路径。 -->
+    <link rel="stylesheet" href="/personal-website/assets/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="site-nav" aria-label="主导航">
+                <a href="/personal-website/" class="logo">楽然的小窝</a>
+                <ul class="nav-links">
+                    <li><a href="/personal-website/">主页</a></li>
+                    <li><a href="/personal-website/portfolio.html">作品集</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <section class="error-section" aria-labelledby="error-title">
+            <div class="container">
+                <p class="error-code" aria-hidden="true">404</p>
+                <h1 class="error-title" id="error-title">这一页走丢了</h1>
+                <p class="error-text">
+                    这个地址下没有内容，可能是链接写错了，或者页面已经搬家。回到主页看看，或者去作品集逛逛。
+                </p>
+                <div class="error-actions">
+                    <a class="btn btn--primary" href="/personal-website/">返回主页</a>
+                    <a class="btn btn--ghost" href="/personal-website/portfolio.html">浏览作品集</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span data-current-year>2026</span> 楽然 | 用艺术连接彼此</p>
+        </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="/personal-website/assets/js/main.js" defer></script>
+</body>
+</html>

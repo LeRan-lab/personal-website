@@ -1,307 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>楽然的小窝 | 作品集</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #3a7bd5;
-            --light: #f8f9fa;
-            --dark: #2d3436;
-            --gray: #636e72;
-            --shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', 'PingFang SC', 'Helvetica Neue', sans-serif;
-        }
-        
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* 导航栏 */
-        header {
-            padding: 2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px);
-            transition: padding 0.3s;
-        }
-        
-        header.scroll {
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        /* 作品集样式 */
-        .portfolio-section {
-            padding: 18vh 0 10vh;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 5rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary), #6c5ce7);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 3px;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .portfolio-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-info {
-            padding: 1.8rem;
-        }
-        
-        .portfolio-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark);
-        }
-        
-        .portfolio-info p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .portfolio-tag {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.3rem 0.8rem;
-            background: rgba(58, 123, 213, 0.1);
-            color: var(--primary);
-            font-size: 0.8rem;
-            border-radius: 20px;
-        }
-        
-        /* 页脚 */
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            color: var(--gray);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            margin-top: 8rem;
-        }
-        
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .nav-links {
-                gap: 1.5rem;
-            }
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>作品集 | 楽然的小窝</title>
+    <meta name="description" content="楽然的插画与设计作品集：森林童话系列插画、城市角落品牌设计、四季手账绘本、海洋保护公益海报、国风纹样系列与情绪日记动画短片。">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://leran-lab.github.io/personal-website/portfolio.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- 分享卡片（微信 / Twitter / 小红书等） -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="楽然的小窝">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="作品集 | 楽然的小窝">
+    <meta property="og:description" content="森林童话系列插画、品牌设计、四季手账绘本、公益海报与国风纹样。">
+    <meta property="og:url" content="https://leran-lab.github.io/personal-website/portfolio.html">
+    <meta property="og:image" content="https://leran-lab.github.io/personal-website/assets/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="楽然的小屋 — 自由插画师作品集封面">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="作品集 | 楽然的小窝">
+    <meta name="twitter:description" content="森林童话系列插画、品牌设计、四季手账绘本、公益海报与国风纹样。">
+    <meta name="twitter:image" content="https://leran-lab.github.io/personal-website/assets/og-cover.jpg">
+
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <header id="header">
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
         <div class="container">
-            <nav>
+            <nav class="site-nav" aria-label="主导航">
                 <a href="index.html" class="logo">楽然的小窝</a>
                 <ul class="nav-links">
                     <li><a href="index.html">主页</a></li>
-                    <li><a href="portfolio.html" class="active">作品集</a></li>
+                    <li><a href="portfolio.html" aria-current="page">作品集</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>我的创作集</h2>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/96/600/400" alt="森林童话系列插画" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>森林童话系列插画</h3>
-                        <p>以北欧神话为灵感的儿童插画，用柔和的色彩表现森林中的奇幻生物与冒险故事。</p>
-                        <span class="portfolio-tag">插画</span>
-                    </div>
+    <main id="main" tabindex="-1">
+        <section class="portfolio-section" aria-labelledby="portfolio-title">
+            <div class="container">
+                <div class="section-title">
+                    <h1 id="portfolio-title">我的创作集</h1>
                 </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/26/600/400" alt="城市角落品牌设计" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>城市角落品牌设计</h3>
-                        <p>独立咖啡馆视觉形象设计，包含LOGO、包装与空间视觉系统，强调温暖与治愈感。</p>
-                        <span class="portfolio-tag">品牌设计</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/65/600/400" alt="四季手账绘本" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>四季手账绘本</h3>
-                        <p>记录一年四季的日常插画集，结合文字与手绘，展现生活中的小确幸。</p>
-                        <span class="portfolio-tag">绘本</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/42/600/400" alt="海洋保护公益海报" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>海洋保护公益海报</h3>
-                        <p>为环保组织设计的系列海报，用对比强烈的视觉语言呼吁保护海洋生态。</p>
-                        <span class="portfolio-tag">公益设计</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/62/600/400" alt="国风纹样系列" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>国风纹样系列</h3>
-                        <p>融合传统与现代的纹样设计，应用于服饰与文创产品，展现东方美学。</p>
-                        <span class="portfolio-tag">纹样设计</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://picsum.photos/id/49/600/400" alt="情绪日记动画短片" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h3>情绪日记动画短片</h3>
-                        <p>用2D动画表现现代人的情绪变化，结合插画与简约动画风格，时长3分钟。</p>
-                        <span class="portfolio-tag">动画</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer>
+                <div class="portfolio-grid">
+                    <!-- TODO(上线前): 以下 6 张作品图仍为 picsum.photos 第三方占位图（随机图库，无 SLA）。
+                         拿到真实作品后请导出为 assets/works/01.webp 等本地文件（单张建议 ≤150 KB、宽 800 px），
+                         同时把 alt 改成描述作品本身的文案，第一张可去掉 loading="lazy"。 -->
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/96/600/400" alt="森林童话系列插画"
+                             class="portfolio-img" width="600" height="400" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>森林童话系列插画</h2>
+                            <p>以北欧神话为灵感的儿童插画，用柔和的色彩表现森林中的奇幻生物与冒险故事。</p>
+                            <span class="portfolio-tag">插画</span>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/26/600/400" alt="城市角落品牌设计"
+                             class="portfolio-img" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>城市角落品牌设计</h2>
+                            <p>独立咖啡馆视觉形象设计，包含LOGO、包装与空间视觉系统，强调温暖与治愈感。</p>
+                            <span class="portfolio-tag">品牌设计</span>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/65/600/400" alt="四季手账绘本"
+                             class="portfolio-img" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>四季手账绘本</h2>
+                            <p>记录一年四季的日常插画集，结合文字与手绘，展现生活中的小确幸。</p>
+                            <span class="portfolio-tag">绘本</span>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/42/600/400" alt="海洋保护公益海报"
+                             class="portfolio-img" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>海洋保护公益海报</h2>
+                            <p>为环保组织设计的系列海报，用对比强烈的视觉语言呼吁保护海洋生态。</p>
+                            <span class="portfolio-tag">公益设计</span>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/62/600/400" alt="国风纹样系列"
+                             class="portfolio-img" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>国风纹样系列</h2>
+                            <p>融合传统与现代的纹样设计，应用于服饰与文创产品，展现东方美学。</p>
+                            <span class="portfolio-tag">纹样设计</span>
+                        </div>
+                    </article>
+
+                    <article class="portfolio-item">
+                        <img src="https://picsum.photos/id/49/600/400" alt="情绪日记动画短片"
+                             class="portfolio-img" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="portfolio-info">
+                            <h2>情绪日记动画短片</h2>
+                            <p>用2D动画表现现代人的情绪变化，结合插画与简约动画风格，时长3分钟。</p>
+                            <span class="portfolio-tag">动画</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 楽然 | 用艺术连接彼此</p>
+            <p>&copy; <span data-current-year>2026</span> 楽然 | 用艺术连接彼此</p>
         </div>
     </footer>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scroll');
-            } else {
-                header.classList.remove('scroll');
-            }
-        });
-    </script>
+    <div class="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
